@@ -13,19 +13,25 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashSet;
 
 public class MainActivity extends AppCompatActivity {
 
-    static ArrayList<String> notes2 = new ArrayList<>();
     static ArrayList<Note> notes = new ArrayList<>();
-    static ArrayAdapter arrayAdapter;
-
+    static String todayDate = DateFormat.getDateInstance().format(new Date());
     static NoteAdapter noteAdapter;
+
+    private ListView listView;
+    private TextView todayDateTextView;
 
 
     // Creating options Menu
@@ -65,7 +71,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // ListView is accessed
-        ListView listView = findViewById(R.id.listView);
+        listView = findViewById(R.id.listView);
+        todayDateTextView = findViewById(R.id.today_date_text_view);
+        todayDateTextView.setText(todayDate);
 
 
         // Store in phone local memory
@@ -92,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Using custom listView Provided by Android Studio
-//        arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_expandable_list_item_1, notes2);
+
         noteAdapter = new NoteAdapter(this,notes);
 
 
@@ -127,9 +135,9 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 // TODO 2. CHANGE NOTES (DELETE)
-//                                notes2.remove(itemToDelete);
+
                                 notes.remove(itemToDelete);
-//                                arrayAdapter.notifyDataSetChanged();
+
                                 noteAdapter.notifyDataSetChanged();
                                 // store data in local storage
 //                                SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.example.notes", Context.MODE_PRIVATE);

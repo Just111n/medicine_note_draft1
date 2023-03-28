@@ -1,142 +1,96 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:padding="16dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="@drawable/rounded_corners"
     >
-
-<!--    <TextView-->
-<!--        android:id="@+id/title_text_view"-->
-<!--        android:textSize="18sp"-->
-<!--        android:textStyle="bold"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Title"/>-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/body_text_view"-->
-<!--        android:textSize="16sp"-->
-<!--        android:textStyle="normal"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Body"/>-->
-
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
+    <TextView
+        android:id="@+id/person_name_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:background="@drawable/rounded_corners"
-        android:layout_marginBottom="8dp">
-        <TextView
-            android:id="@+id/person_name_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Person Name:"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            />
-        <TextView
-            android:id="@+id/person_name_value_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        android:text="Person Name:"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        />
+    <TextView
+        android:id="@+id/person_name_value_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Hello"
+        android:textSize="14sp"
+        />
+    <TextView
+        android:id="@+id/drug_name_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Drug Name:"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        />
+    <TextView
+        android:id="@+id/drug_name_value_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Hello"
+        android:textSize="14sp"
+        />
+
+    <TextView
+        android:id="@+id/drug_dosage_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Drug Dosage:"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        />
+    <TextView
+        android:id="@+id/drug_dosage_value_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="Hello"
-            android:textSize="14sp"
-            />
-        <TextView
-            android:id="@+id/drug_name_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Drug Name:"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:layout_marginTop="8dp"
-            />
+        android:text="Hello"
+        android:textSize="14sp"
+        />
+    <TextView
+        android:id="@+id/drug_frequency_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Drug Frequency:"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        />
 
-        <TextView
-            android:id="@+id/drug_name_value_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Hello"
-            android:textSize="14sp"
-            />
+    <TextView
+        android:id="@+id/drug_frequency_value_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Hello"
+        android:textSize="14sp"
+        />
 
-        <TextView
-            android:id="@+id/drug_dosage_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Drug Dosage:"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:layout_marginTop="8dp"
-            />
+    <TextView
+        android:id="@+id/drug_route_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Drug Route:"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        />
 
-        <TextView
-            android:id="@+id/drug_dosage_value_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Hello"
-            android:textSize="14sp"
-            />
-
-
-        <TextView
-            android:id="@+id/drug_frequency_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Drug Frequency:"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:layout_marginTop="8dp"
-            />
-
-        <TextView
-            android:id="@+id/drug_frequency_value_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Hello"
-            android:textSize="14sp"
-            />
-        <TextView
-            android:id="@+id/drug_type_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Drug Type:"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:layout_marginTop="8dp"
-            />
-
-        <TextView
-            android:id="@+id/drug_type_value_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Hello"
-            android:textSize="14sp"
-            />
-        <TextView
-            android:id="@+id/drug_route_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Drug Route:"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:layout_marginTop="8dp"
-            />
-
-        <TextView
-            android:id="@+id/drug_route_value_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Hello"
-            android:textSize="14sp"
-            />
-    </LinearLayout>
+    <TextView
+        android:id="@+id/drug_route_value_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Hello"
+        android:textSize="14sp"
+        />
 </LinearLayout>

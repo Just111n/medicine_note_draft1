@@ -10,20 +10,6 @@ import android.widget.TextView;
 
 import java.util.List;
 
-//    @Override
-//    public int getCount() {
-//        return notes.size();
-//    }
-//
-//    @Override
-//    public Object getItem(int position) {
-//        return notes.get(position);
-//    }
-//
-//    @Override
-//    public long getItemId(int position) {
-//        return position;
-//    }
 
 public class NoteAdapter extends BaseAdapter {
     private LayoutInflater inflater;

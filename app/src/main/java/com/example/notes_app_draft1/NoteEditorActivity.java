@@ -15,8 +15,6 @@ import java.util.HashSet;
 
 public class NoteEditorActivity extends AppCompatActivity {
     int noteId;
-    EditText editTextNoteTitle;
-    EditText editTextNoteBody;
 
     EditText person_name_edit_text;
     EditText drug_name_edit_text;
@@ -25,15 +23,12 @@ public class NoteEditorActivity extends AppCompatActivity {
     EditText drug_route_edit_text;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note_editor);
 
-//        editTextNoteTitle = findViewById(R.id.editTextNoteTitle);
-//        editTextNoteBody = findViewById(R.id.editTextNoteBody);
+
         person_name_edit_text = findViewById(R.id.person_name_edit_text);
         drug_name_edit_text = findViewById(R.id.drug_name_edit_text);
         drug_dosage_edit_text = findViewById(R.id.drug_dosage_edit_text);
@@ -48,10 +43,6 @@ public class NoteEditorActivity extends AppCompatActivity {
 
         // TODO 3. CHANGE NOTES (CREATE)
         if (noteId != -1) {
-//            editText.setText(MainActivity.notes2.get(noteId));
-
-//            editTextNoteTitle.setText(MainActivity.notes.get(noteId).getTitle());
-//            editTextNoteBody.setText(MainActivity.notes.get(noteId).getBody());
 
             person_name_edit_text.setText(MainActivity.notes.get(noteId).getPersonName());
             drug_name_edit_text.setText(MainActivity.notes.get(noteId).getDrugName());
@@ -62,15 +53,10 @@ public class NoteEditorActivity extends AppCompatActivity {
 
         } else {
 
-//            MainActivity.notes2.add("");
-//            noteId = MainActivity.notes2.size() - 1;
-//            MainActivity.arrayAdapter.notifyDataSetChanged();
-
             MainActivity.notes.add(new Note("Write Name Here","Drug Name",
                     "drug dosage","drug frequency","drug route"));
             noteId = MainActivity.notes.size() -1;
             MainActivity.noteAdapter.notifyDataSetChanged();
-
         }
 
         person_name_edit_text.addTextChangedListener(new TextWatcher() {
@@ -82,8 +68,7 @@ public class NoteEditorActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 // TODO 4. CHANGE NOTES (UPDATE)
-//                MainActivity.notes2.set(noteId, String.valueOf(charSequence));
-//                MainActivity.arrayAdapter.notifyDataSetChanged();
+
 
                 Note noteUpdated = MainActivity.notes.get(noteId);
                 noteUpdated.setPersonName(String.valueOf(charSequence));
@@ -112,8 +97,6 @@ public class NoteEditorActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 // TODO 4. CHANGE NOTES (UPDATE)
-//                MainActivity.notes2.set(noteId, String.valueOf(charSequence));
-//                MainActivity.arrayAdapter.notifyDataSetChanged();
 
                 Note noteUpdated = MainActivity.notes.get(noteId);
                 noteUpdated.setDrugName(String.valueOf(charSequence));
@@ -142,8 +125,6 @@ public class NoteEditorActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 // TODO 4. CHANGE NOTES (UPDATE)
-//                MainActivity.notes2.set(noteId, String.valueOf(charSequence));
-//                MainActivity.arrayAdapter.notifyDataSetChanged();
 
                 Note noteUpdated = MainActivity.notes.get(noteId);
                 noteUpdated.setDrugDosage(String.valueOf(charSequence));
@@ -202,8 +183,7 @@ public class NoteEditorActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 // TODO 4. CHANGE NOTES (UPDATE)
-//                MainActivity.notes2.set(noteId, String.valueOf(charSequence));
-//                MainActivity.arrayAdapter.notifyDataSetChanged();
+
 
                 Note noteUpdated = MainActivity.notes.get(noteId);
                 noteUpdated.setDrugRoute(String.valueOf(charSequence));
