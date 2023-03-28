@@ -28,6 +28,8 @@ public class NoteEditorActivity extends AppCompatActivity {
 
         // Accessing the data using key and value
         noteId = intent.getIntExtra("noteId", -1);
+
+        // TODO 3. CHANGE NOTES (CREATE)
         if (noteId != -1) {
             editText.setText(MainActivity.notes2.get(noteId));
         } else {
@@ -46,6 +48,7 @@ public class NoteEditorActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // TODO 4. CHANGE NOTES (UPDATE)
                 MainActivity.notes2.set(noteId, String.valueOf(charSequence));
                 MainActivity.arrayAdapter.notifyDataSetChanged();
                 // Creating Object of SharedPreferences to store data in the phone

@@ -22,6 +22,7 @@ import java.util.HashSet;
 public class MainActivity extends AppCompatActivity {
 
     static ArrayList<String> notes2 = new ArrayList<>();
+    static ArrayList<Note> notes = new ArrayList<>();
     static ArrayAdapter arrayAdapter;
 
     // Creating options Menu
@@ -60,23 +61,31 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // ListView is accessed
         ListView listView = findViewById(R.id.listView);
 
+
+        // Store in phone local memory
         SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.example.notes", Context.MODE_PRIVATE);
         HashSet<String> set = (HashSet<String>) sharedPreferences.getStringSet("notes", null);
 
+        // TODO 1. CHANGE NOTES (INIT)
         if (set == null) {
 
-            notes2.add("Example note");
+            notes2.add("Testing This");
+
 
         } else {
             notes2 = new ArrayList(set);
+
         }
 
         // Using custom listView Provided by Android Studio
         arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_expandable_list_item_1, notes2);
+        NoteAdapter adapter = new NoteAdapter(notes);
 
         listView.setAdapter(arrayAdapter);
+//        listView.setAdapter(adapter);
 
         // Click on note to edit
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -105,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
+                                // TODO 2. CHANGE NOTES (DELETE)
                                 notes2.remove(itemToDelete);
                                 arrayAdapter.notifyDataSetChanged();
                                 SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.example.notes", Context.MODE_PRIVATE);
