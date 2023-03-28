@@ -86,7 +86,8 @@ public class MainActivity extends AppCompatActivity {
 //
 //        }
         notes = new ArrayList<>();
-        Note newNote = new Note("New Note Title", "New Note Body");
+        Note newNote = new Note("Justin Looi", "Paracetemol",
+                "2 tables","Every 2 days/Every Monday and Wedsnesday","Oral");
         notes.add(newNote);
 
 
