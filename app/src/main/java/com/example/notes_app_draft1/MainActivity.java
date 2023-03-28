@@ -19,6 +19,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ListView listView;
     private TextView todayDateTextView;
+    private FloatingActionButton addNoteButton;
 
 
     // Creating options Menu
@@ -74,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
         listView = findViewById(R.id.listView);
         todayDateTextView = findViewById(R.id.today_date_text_view);
         todayDateTextView.setText(todayDate);
+        addNoteButton = findViewById(R.id.add_note_fab);
 
 
         // Store in phone local memory
@@ -146,6 +150,18 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }).setNegativeButton("No", null).show();
                 return true;
+            }
+        });
+
+        FloatingActionButton addNoteButton = findViewById(R.id.add_note_fab);
+        addNoteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Handle button click here
+                // Going from MainActivity to NotesEditorActivity
+                Intent intent = new Intent(getApplicationContext(), NoteEditorActivity.class);
+                startActivity(intent);
+
             }
         });
     }

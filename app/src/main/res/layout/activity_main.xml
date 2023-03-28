@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,24 +8,34 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
-    <!--Adding a TextView -->
-    <TextView
-        android:id="@+id/today_date_text_view"
-        android:layout_width="match_parent"
+<!--    &lt;!&ndash;Adding a TextView &ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:id="@+id/today_date_text_view"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="center_horizontal"-->
+<!--        android:text="Today's date: "-->
+<!--        android:textColor="@android:color/holo_green_dark"-->
+<!--        android:textSize="30sp" />-->
+
+<!--    &lt;!&ndash;Adding a ListView &ndash;&gt;-->
+<!--    <ListView-->
+<!--        android:id="@+id/listView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_margin="20dp"-->
+<!--        android:dividerHeight="10dp"-->
+<!--        android:divider="@color/design_default_color_background"-->
+<!--        />-->
+
+    <include layout="@layout/fragment_home" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_note_fab"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="Today's date: "
-        android:textColor="@android:color/holo_green_dark"
-        android:textSize="30sp" />
+        android:layout_gravity="end|bottom"
+        android:src="@drawable/ic_add"
+        android:layout_margin="16dp" />
 
-    <!--Adding a ListView -->
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="20dp"
-        android:dividerHeight="10dp"
-        android:divider="@color/design_default_color_background"
-        />
-
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
