@@ -11,7 +11,7 @@ import java.util.List;
 public class NoteAdapter extends BaseAdapter {
     private List<Note> notes;
 
-    public NoteAdapter(List<Note> notes) {
+    public NoteAdapter(MainActivity mainActivity, List<Note> notes) {
         this.notes = notes;
     }
 

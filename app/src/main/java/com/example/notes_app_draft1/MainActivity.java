@@ -25,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
     static ArrayList<Note> notes = new ArrayList<>();
     static ArrayAdapter arrayAdapter;
 
+    static NoteAdapter noteAdapter;
+
+
     // Creating options Menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -66,26 +69,34 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Store in phone local memory
-        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.example.notes", Context.MODE_PRIVATE);
-        HashSet<String> set = (HashSet<String>) sharedPreferences.getStringSet("notes", null);
+//        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.example.notes", Context.MODE_PRIVATE);
+//        HashSet<String> set = (HashSet<String>) sharedPreferences.getStringSet("notes", null);
 
         // TODO 1. CHANGE NOTES (INIT)
-        if (set == null) {
+//        if (set == null) {
+//
+////            notes2.add("Testing This");
+//            Note newNote = new Note("New Note Title", "New Note Body");
+//            notes.add(newNote);
+//
+//
+//        } else {
+//            notes2 = new ArrayList(set);
+//
+//
+//        }
+        notes = new ArrayList<>();
+        Note newNote = new Note("New Note Title", "New Note Body");
+        notes.add(newNote);
 
-            notes2.add("Testing This");
-
-
-        } else {
-            notes2 = new ArrayList(set);
-
-        }
 
         // Using custom listView Provided by Android Studio
-        arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_expandable_list_item_1, notes2);
-        NoteAdapter adapter = new NoteAdapter(notes);
+//        arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_expandable_list_item_1, notes2);
+        noteAdapter = new NoteAdapter(this,notes);
 
-        listView.setAdapter(arrayAdapter);
-//        listView.setAdapter(adapter);
+
+//        listView.setAdapter(arrayAdapter);
+        listView.setAdapter(noteAdapter);
 
         // Click on note to edit
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -115,11 +126,14 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 // TODO 2. CHANGE NOTES (DELETE)
-                                notes2.remove(itemToDelete);
-                                arrayAdapter.notifyDataSetChanged();
-                                SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.example.notes", Context.MODE_PRIVATE);
-                                HashSet<String> set = new HashSet(MainActivity.notes2);
-                                sharedPreferences.edit().putStringSet("notes", set).apply();
+//                                notes2.remove(itemToDelete);
+                                notes.remove(itemToDelete);
+//                                arrayAdapter.notifyDataSetChanged();
+                                noteAdapter.notifyDataSetChanged();
+                                // store data in local storage
+//                                SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.example.notes", Context.MODE_PRIVATE);
+//                                HashSet<String> set = new HashSet(MainActivity.notes2);
+//                                sharedPreferences.edit().putStringSet("notes", set).apply();
                             }
                         }).setNegativeButton("No", null).show();
                 return true;
